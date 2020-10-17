@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "A starter for React-Typescript Apps",
   "scripts": {
+    "preinstall": "npm run setup",
+    "setup": "node ./scripts/setup",
     "test": "jest --verbose",
     "watch": "webpack --config config/webpack.shared.js --watch",
     "start": "cross-env NODE_ENV=development webpack-dev-server --open --config config/webpack.dev.js",
