@@ -20,6 +20,7 @@ config.devServer = {
     proxy: {
         target: API_HOST,
     },
+    historyApiFallback: true,
 }
 
 const globalVars = {
