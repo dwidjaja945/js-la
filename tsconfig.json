@@ -1,0 +1,47 @@
+{
+    "compilerOptions": {
+        "outDir": "./output/",
+        "sourceMap": true,
+        "noImplicitReturns": true,
+        "allowSyntheticDefaultImports": true,
+        "module": "esNext",
+        "target": "esNext",
+        "jsx": "react",
+        "esModuleInterop": true,
+        "allowJs": true,
+        "strict": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "baseUrl": ".",
+        "paths": {
+            "@toolkit/*": [
+                "src/toolkit/*"
+            ],
+            "@icons/*": [
+                "src/icons/*"
+            ],
+            "@components/*": [
+                "src/components/*"
+            ],
+            "@hooks/*": [
+                "src/toolkit/hooks/*"
+            ],
+            "@contexts/*": [
+                "src/contexts/*"
+            ],
+            "@pages/*": [
+                "src/pages/*"
+            ],
+            "@assets/*": [
+                "assets/*"
+            ],
+            "@test/*": [
+                "test/*"
+            ]
+        },
+        "lib": [
+            "es2016",
+            "dom"
+        ]
+    }
+}
