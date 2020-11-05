@@ -82,6 +82,7 @@
         ],
         "@typescript-eslint/no-floating-promises": "off",
         "@typescript-eslint/no-unsafe-assignment": "warn",
-        "consistent-return": "off"
+        "consistent-return": "off",
+        "react/require-default-props": "off"
     }
 }

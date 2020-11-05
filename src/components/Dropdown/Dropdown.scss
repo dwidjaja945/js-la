@@ -1,0 +1,36 @@
+.root {
+    position: relative;
+    ul, li {
+        margin: 0;
+        padding: 0;
+        font-size: inherit;
+        list-style: none;
+    }
+    button {
+        font-size: 1.25rem;
+        &,
+        &:focus {
+            border: none;
+            outline: none;
+        }
+        &:focus {
+            background-color: darken(lightgray, 5%);
+        }
+    }
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid gray;
+    min-width: 300px;
+    min-height: 200px;
+}
+
+.show {
+    display: flex;
+    flex-direction: column;
+}
