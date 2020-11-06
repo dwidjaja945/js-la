@@ -1,7 +1,8 @@
 import React, { Suspense, lazy } from 'react';
 
-import Dropdown from '@components/Dropdown';
-import OldDropdown, { DropdownItem } from '@components/OldDropdown';
+import Dropdown from '@components/Dropdowns/Dropdown';
+import OldDropdown, { DropdownItem } from '@components/Dropdowns/OldDropdown';
+import Panel from '@components/Panel';
 
 const dropdownItems: DropdownItem[] = [
     {
@@ -31,7 +32,9 @@ const App = (): JSX.Element => (
         Hello, World!
         <div style={{ display: 'flex', justifyContent: 'space-around' }}>
             <Dropdown>
-                <Dropdown.Item>
+                <Dropdown.Item
+                    onClick={(): void => console.log('hello')}
+                >
                     hello
                 </Dropdown.Item>
                 <Dropdown.Item>
@@ -45,6 +48,9 @@ const App = (): JSX.Element => (
                 </Dropdown.Item>
             </Dropdown>
             <OldDropdown items={dropdownItems} />
+        </div>
+        <div>
+            <Panel />
         </div>
     </div>
 );
