@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { cssBind } from '@toolkit/helper/cssUtils';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 
-import styles from './Dropdown.scss';
+import styles from '../Dropdown.scss';
 
 const css = cssBind(styles);
 
@@ -14,24 +15,31 @@ const Dropdown = (props: Props): JSX.Element => {
     const [show, setShow] = React.useState(false);
     return (
         <div className={css('root')}>
-            <input
-                onFocus={(): void => setShow(true)}
-            />
-            <ul className={css('menu', show && 'show')}>
-                {React.Children.map(children, (child) => {
-                    if (child) {
-                        const { props: { onClick } } = child;
-                        return React.cloneElement(child, {
-                            ...child.props,
-                            onClick: () => {
+            <ClickAwayListener
+                onClickAway={(): void => setShow(false)}
+            >
+                <div>
+                    <input
+                        onFocus={(): void => setShow(true)}
+                    />
+                    <ul className={css('menu', show && 'show')}>
+                        {React.Children.map(children, (child) => {
+                            if (child) {
+                                const childProps: ItemProps = child.props;
+                                const { onClick } = childProps;
+                                return React.cloneElement(child, {
+                                    ...child.props,
+                                    onClick: () => {
                                 onClick?.();
                                 setShow(false);
-                            },
-                        });
-                    }
-                    return null;
-                })}
-            </ul>
+                                    },
+                                });
+                            }
+                            return null;
+                        })}
+                    </ul>
+                </div>
+            </ClickAwayListener>
         </div>
     );
 };

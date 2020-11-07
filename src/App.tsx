@@ -1,8 +1,13 @@
 import React, { Suspense, lazy } from 'react';
 
-import Dropdown from '@components/Dropdowns/Dropdown';
+import { cssBind } from '@toolkit/helper/cssUtils';
+import Dropdown from '@components/Dropdowns/Dropdown/index';
 import OldDropdown, { DropdownItem } from '@components/Dropdowns/OldDropdown';
 import Panel from '@components/Panel';
+
+import styles from './App.scss';
+
+const css = cssBind(styles);
 
 const dropdownItems: DropdownItem[] = [
     {
@@ -28,9 +33,9 @@ const dropdownItems: DropdownItem[] = [
 ];
 
 const App = (): JSX.Element => (
-    <div style={{ padding: '30px' }}>
+    <div className={css('root')}>
         Hello, World!
-        <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+        <div className={css('dropdowns')}>
             <Dropdown>
                 <Dropdown.Item
                     onClick={(): void => console.log('hello')}
@@ -49,7 +54,35 @@ const App = (): JSX.Element => (
             </Dropdown>
             <OldDropdown items={dropdownItems} />
         </div>
-        <div>
+        <div className={css('panels')}>
+            <Panel>
+                <Panel.Header>
+                    Header
+                </Panel.Header>
+                <Panel.Body className={css('body')}>
+                    Body
+                </Panel.Body>
+                <Panel.Footer>
+                    Footer
+                </Panel.Footer>
+            </Panel>
+            <Panel>
+                <Panel.Header>
+                    Header
+                </Panel.Header>
+                <Panel.Body className={css('body')}>
+                    Body
+                </Panel.Body>
+                <Panel.Header>
+                    Header
+                </Panel.Header>
+                <Panel.Body className={css('body')}>
+                    Body
+                </Panel.Body>
+                <Panel.Footer>
+                    Footer
+                </Panel.Footer>
+            </Panel>
             <Panel />
         </div>
     </div>

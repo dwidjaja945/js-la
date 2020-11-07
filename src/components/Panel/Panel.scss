@@ -1,3 +1,26 @@
 .root {
-    
+    border: 1px solid gray;
+    border-radius: 6px;
+    min-height: 600px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.15);
+}
+
+.header,
+.body,
+.footer {
+    padding: 20px;
+}
+
+.header {
+    background-color: blue;
+    color: white;
+}
+
+.footer {
+    background-color: #eee;
 }

@@ -1,0 +1,19 @@
+.root {
+    padding: 30px;
+}
+
+.dropdowns {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.panels {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+
+    .body {
+        flex: 1;
+    }
+}
