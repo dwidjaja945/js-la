@@ -7,13 +7,14 @@ const css = cssBind(styles);
 
 export interface Props {
     children?: JSX.Element[];
+    className?: string;
 }
 
 const Panel = (props: Props): JSX.Element => {
-    const { children } = props;
+    const { children, className } = props;
     return (
         <div
-            className={css('root')}
+            className={css('root', className)}
         >
             {children}
         </div>

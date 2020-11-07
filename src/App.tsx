@@ -34,7 +34,7 @@ const dropdownItems: DropdownItem[] = [
 
 const App = (): JSX.Element => (
     <div className={css('root')}>
-        Hello, World!
+        Hello, Hackbuddies!
         <div className={css('dropdowns')}>
             <Dropdown>
                 <Dropdown.Item
