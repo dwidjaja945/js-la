@@ -23,12 +23,13 @@ const Panel = (props: Props): JSX.Element => {
 
 interface HeaderProps {
     children: JSX.Element | string;
+    className?: string;
 }
 
 const Header = (props: HeaderProps): JSX.Element => {
-    const { children } = props;
+    const { children, className } = props;
     return (
-        <div className={css('header')}>
+        <div className={css('header', className)}>
             {children}
         </div>
     );
@@ -49,11 +50,12 @@ const Body = (props: BodyProps): JSX.Element => {
 
 interface FooterProps {
     children: JSX.Element | string;
+    className?: string;
 }
 const Footer = (props: FooterProps): JSX.Element => {
-    const { children } = props;
+    const { children, className } = props;
     return (
-        <div className={css('footer')}>
+        <div className={css('footer', className)}>
             {children}
         </div>
     );
