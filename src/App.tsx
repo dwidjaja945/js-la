@@ -44,12 +44,11 @@ const App = (): JSX.Element => {
             <div className={css('dropdowns')}>
                 <Dropdown onSelect={handleSelect}>
                     <Dropdown.Item
-                        onClick={(): void => console.log('hello')}
-                        value="hello"
+                        onClick={(): void => handleSelect('hello')}
                     >
                         hello
                     </Dropdown.Item>
-                    <Dropdown.Item>
+                    <Dropdown.Item value="world">
                         world
                     </Dropdown.Item>
                     <Dropdown.Item>
