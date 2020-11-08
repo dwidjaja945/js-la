@@ -7,11 +7,12 @@ import styles from '../Dropdown.scss';
 const css = cssBind(styles);
 
 interface Props {
+    onSelect(value?: unknown): void;
     children?: JSX.Element[];
 }
 
 const Dropdown = (props: Props): JSX.Element => {
-    const { children } = props;
+    const { onSelect, children } = props;
     const [show, setShow] = React.useState(false);
     return (
         <div className={css('root')}>
@@ -26,12 +27,13 @@ const Dropdown = (props: Props): JSX.Element => {
                         {React.Children.map(children, (child) => {
                             if (child) {
                                 const childProps: ItemProps = child.props;
-                                const { onClick } = childProps;
+                                const { onClick, value } = childProps;
                                 return React.cloneElement(child, {
                                     ...child.props,
                                     onClick: () => {
-                                onClick?.();
-                                setShow(false);
+                                        onClick?.();
+                                        onSelect(value);
+                                        setShow(false);
                                     },
                                 });
                             }
@@ -47,6 +49,7 @@ const Dropdown = (props: Props): JSX.Element => {
 interface ItemProps {
     children?: JSX.Element | string;
     onClick?: () => void;
+    value?: unknown;
 }
 
 const Item = (props: ItemProps): JSX.Element => {

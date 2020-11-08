@@ -37,9 +37,10 @@ const App = (): JSX.Element => (
     <div className={css('root')}>
         Hello, Hackbuddies!
         <div className={css('dropdowns')}>
-            <Dropdown>
+            <Dropdown onSelect={(item?: JSX.Element | string) => console.log(item)}>
                 <Dropdown.Item
                     onClick={(): void => console.log('hello')}
+                    value="hello"
                 >
                     hello
                 </Dropdown.Item>

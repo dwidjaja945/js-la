@@ -92,6 +92,7 @@
         "@typescript-eslint/no-floating-promises": "off",
         "@typescript-eslint/no-unsafe-assignment": "warn",
         "consistent-return": "off",
-        "react/require-default-props": "off"
+        "react/require-default-props": "off",
+        "@typescript-eslint/unbound-method": "off"
     }
 }
