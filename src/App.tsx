@@ -33,56 +33,62 @@ const dropdownItems: DropdownItem[] = [
     },
 ];
 
-const App = (): JSX.Element => (
-    <div className={css('root')}>
-        Hello, Hackbuddies!
-        <div className={css('dropdowns')}>
-            <Dropdown onSelect={(item?: JSX.Element | string) => console.log(item)}>
-                <Dropdown.Item
-                    onClick={(): void => console.log('hello')}
-                    value="hello"
+const App = (): JSX.Element => {
+    const handleSelect = (item?: string): void => {
+        console.log(item);
+    };
+
+    return (
+        <div className={css('root')}>
+            Hello, Hackbuddies!
+            <div className={css('dropdowns')}>
+                <Dropdown onSelect={handleSelect}>
+                    <Dropdown.Item
+                        onClick={(): void => console.log('hello')}
+                        value="hello"
+                    >
+                        hello
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        world
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        foo
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        bar
+                    </Dropdown.Item>
+                </Dropdown>
+                <OldDropdown items={dropdownItems} />
+            </div>
+            <div className={css('panels')}>
+                <OldPanel
+                    title="Header"
+                    footer="Footer"
                 >
-                    hello
-                </Dropdown.Item>
-                <Dropdown.Item>
-                    world
-                </Dropdown.Item>
-                <Dropdown.Item>
-                    foo
-                </Dropdown.Item>
-                <Dropdown.Item>
-                    bar
-                </Dropdown.Item>
-            </Dropdown>
-            <OldDropdown items={dropdownItems} />
-        </div>
-        <div className={css('panels')}>
-            <OldPanel
-                title="Header"
-                footer="Footer"
-            >
-                Body
-            </OldPanel>
-            <Panel>
-                <Panel.Header>
-                    Header
-                </Panel.Header>
-                <Panel.Body className={css('body')}>
                     Body
-                </Panel.Body>
-                <Panel.Header>
-                    Header
-                </Panel.Header>
-                <Panel.Body className={css('body')}>
-                    Body
-                </Panel.Body>
-                <Panel.Footer>
-                    Footer
-                </Panel.Footer>
-            </Panel>
-            <Panel />
+                </OldPanel>
+                <Panel>
+                    <Panel.Header>
+                        Header
+                    </Panel.Header>
+                    <Panel.Body className={css('body')}>
+                        Body
+                    </Panel.Body>
+                    <Panel.Header>
+                        Header
+                    </Panel.Header>
+                    <Panel.Body className={css('body')}>
+                        Body
+                    </Panel.Body>
+                    <Panel.Footer>
+                        Footer
+                    </Panel.Footer>
+                </Panel>
+                <Panel />
+            </div>
         </div>
-    </div>
-);
+    );
+};
 
 export default App;
