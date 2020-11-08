@@ -4,6 +4,7 @@ import { cssBind } from '@toolkit/helper/cssUtils';
 import Dropdown from '@components/Dropdowns/Dropdown/index';
 import OldDropdown, { DropdownItem } from '@components/Dropdowns/OldDropdown';
 import Panel from '@components/Panel';
+import OldPanel from '@components/Panel/OldPanel/OldPanel';
 
 import styles from './App.scss';
 
@@ -55,17 +56,12 @@ const App = (): JSX.Element => (
             <OldDropdown items={dropdownItems} />
         </div>
         <div className={css('panels')}>
-            <Panel>
-                <Panel.Header>
-                    Header
-                </Panel.Header>
-                <Panel.Body className={css('body')}>
-                    Body
-                </Panel.Body>
-                <Panel.Footer>
-                    Footer
-                </Panel.Footer>
-            </Panel>
+            <OldPanel
+                title="Header"
+                footer="Footer"
+            >
+                Body
+            </OldPanel>
             <Panel>
                 <Panel.Header>
                     Header

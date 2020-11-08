@@ -29,9 +29,9 @@ interface HeaderProps {
 const Header = (props: HeaderProps): JSX.Element => {
     const { children, className } = props;
     return (
-        <div className={css('header', className)}>
+        <header className={css('header', className)}>
             {children}
-        </div>
+        </header>
     );
 };
 
@@ -55,9 +55,9 @@ interface FooterProps {
 const Footer = (props: FooterProps): JSX.Element => {
     const { children, className } = props;
     return (
-        <div className={css('footer', className)}>
+        <footer className={css('footer', className)}>
             {children}
-        </div>
+        </footer>
     );
 };
 
