@@ -22,3 +22,20 @@
         background-color: #eee;
     }
 }
+
+.iconPanel {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+
+    .panelContainer {
+        min-height: 500px;
+        min-width: 300px;
+    }
+
+    .panel {
+        min-height: 500px;
+    }
+}

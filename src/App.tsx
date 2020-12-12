@@ -1,10 +1,15 @@
 import * as React from 'react';
 
+import AccessibilityNewIcon from '@material-ui/icons/AccessibilityNew';
+import AdjustIcon from '@material-ui/icons/Adjust';
+
 import { cssBind } from '@toolkit/helper/cssUtils';
 import Dropdown from '@components/Dropdowns/Dropdown/index';
 import OldDropdown, { DropdownItem } from '@components/Dropdowns/OldDropdown';
 import Panel from '@components/Panel';
 import OldPanel from '@components/Panel/OldPanel/OldPanel';
+
+import IconPanel from '@components/IconPanel';
 
 import styles from './App.scss';
 
@@ -88,6 +93,22 @@ const App = (): JSX.Element => {
                     </Panel.Footer>
                 </Panel>
                 <Panel />
+            </div>
+            <div className={css('iconPanel')}>
+                <IconPanel
+                    containerClassName={css('panelContainer')}
+                    className={css('panel')}
+                />
+                <IconPanel
+                    icon={<AccessibilityNewIcon />}
+                    containerClassName={css('panelContainer')}
+                    className={css('panel')}
+                />
+                <IconPanel
+                    icon={<AdjustIcon />}
+                    containerClassName={css('panelContainer')}
+                    className={css('panel')}
+                />
             </div>
         </div>
     );
