@@ -18,7 +18,7 @@ const App = (): JSX.Element => (
             >
                 Body
             </OldPanel>
-            <Panel>
+            {/* <Panel>
                 <Panel.Header>
                     Header
                 </Panel.Header>
@@ -35,7 +35,7 @@ const App = (): JSX.Element => (
                     Footer
                 </Panel.Footer>
             </Panel>
-            <Panel />
+            <Panel /> */}
         </div>
     </div>
 );
