@@ -98,17 +98,23 @@ const App = (): JSX.Element => {
                 <IconPanel
                     containerClassName={css('panelContainer')}
                     className={css('panel')}
-                />
+                >
+                    Custom Content Goes in here
+                </IconPanel>
                 <IconPanel
                     icon={<AccessibilityNewIcon />}
                     containerClassName={css('panelContainer')}
                     className={css('panel')}
-                />
+                >
+                    <h1>Can literally be anything</h1>
+                </IconPanel>
                 <IconPanel
                     icon={<AdjustIcon />}
                     containerClassName={css('panelContainer')}
                     className={css('panel')}
-                />
+                >
+                    <h6>Can control styling for panel directly where it's used</h6>
+                </IconPanel>
             </div>
         </div>
     );
