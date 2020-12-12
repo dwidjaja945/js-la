@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import * as React from 'react';
 
 import { cssBind } from '@toolkit/helper/cssUtils';
 import Dropdown from '@components/Dropdowns/Dropdown/index';
