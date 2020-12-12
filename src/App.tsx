@@ -34,15 +34,18 @@ const dropdownItems: DropdownItem[] = [
 ];
 
 const App = (): JSX.Element => {
+    const [dropdownValue, setDropdownValue] = React.useState<undefined | string>();
+
     const handleSelect = (item?: string): void => {
         console.log(item);
+        setDropdownValue(item);
     };
 
     return (
         <div className={css('root')}>
             Hello, Hackbuddies!
             <div className={css('dropdowns')}>
-                <Dropdown onSelect={handleSelect}>
+                <Dropdown onSelect={handleSelect} value={dropdownValue}>
                     <Dropdown.Item
                         onClick={(): void => handleSelect('hello')}
                     >

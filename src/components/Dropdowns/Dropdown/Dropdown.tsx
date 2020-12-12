@@ -7,12 +7,13 @@ import styles from '../Dropdown.scss';
 const css = cssBind(styles);
 
 interface Props {
+    value?: string;
     onSelect(value?: unknown): void;
     children?: JSX.Element[];
 }
 
 const Dropdown = (props: Props): JSX.Element => {
-    const { onSelect, children } = props;
+    const { value, onSelect, children } = props;
     const [show, setShow] = React.useState(false);
     return (
         <div className={css('root')}>
@@ -22,6 +23,7 @@ const Dropdown = (props: Props): JSX.Element => {
                 <div>
                     <input
                         onFocus={(): void => setShow(true)}
+                        value={value}
                     />
                     <ul className={css('menu', show && 'show')}>
                         {React.Children.map(children, (child) => {
