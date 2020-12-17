@@ -113,7 +113,7 @@ const App = (): JSX.Element => {
                     containerClassName={css('panelContainer')}
                     className={css('panel')}
                 >
-                    <h6>Can control styling for panel directly where it's used</h6>
+                    <h6>Can control styling for panel directly where it&apos;s used</h6>
                 </IconPanel>
             </div>
         </div>
