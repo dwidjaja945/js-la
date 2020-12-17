@@ -1,8 +1,9 @@
 import * as React from 'react';
 
-import { cssBind } from '@toolkit/helper/cssUtils';
+import { cssBind, cssBind } from '@toolkit/helper/cssUtils';
 import Panel from '@components/Panel';
 import OldPanel from '@components/Panel/OldPanel/OldPanel';
+import IconPanel from '@components/IconPanel';
 
 import styles from './App.scss';
 

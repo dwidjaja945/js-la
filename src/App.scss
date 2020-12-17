@@ -23,3 +23,22 @@
         background-color: #eee;
     }
 }
+
+.iconPanel {
+    border-radius: 4px;
+    box-shadow: 0 0 17px 3px rgba(0, 0, 0, 0.25);
+    margin: 20px 0;
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+
+    .panelContainer {
+        min-height: 500px;
+        min-width: 300px;
+    }
+
+    .panel {
+        min-height: 500px;
+    }
+}
